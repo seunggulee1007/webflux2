@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: webflux2
+server:
+  port: 8090
