@@ -12,7 +12,7 @@ public class PostController {
     @GetMapping("/{id}")
     public PostResponse getPostId(@PathVariable(value= "id") Long id) {
         PostResponse postResponse = new PostResponse();
-        postResponse.setId("1");
+        postResponse.setId(Long.toString(id));
         postResponse.setContent("hello world");
         return postResponse;
     }
