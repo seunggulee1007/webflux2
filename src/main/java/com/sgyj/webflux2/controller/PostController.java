@@ -12,6 +12,10 @@ public class PostController {
     @GetMapping("/{id}")
     public PostResponse getPostId(@PathVariable(value= "id") Long id) throws InterruptedException {
         Thread.sleep(3000);
+        if(id > 10L ) {
+            throw new IllegalArgumentException("id must be less than 10");
+        }
+
         PostResponse postResponse = new PostResponse();
         postResponse.setId(Long.toString(id));
         postResponse.setContent("hello world");
