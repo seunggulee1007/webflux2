@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class PostController {
 
     @GetMapping("/{id}")
-    public PostResponse getPostId(@PathVariable(value= "id") Long id) {
+    public PostResponse getPostId(@PathVariable(value= "id") Long id) throws InterruptedException {
+        Thread.sleep(3000);
         PostResponse postResponse = new PostResponse();
         postResponse.setId(Long.toString(id));
         postResponse.setContent("hello world");
